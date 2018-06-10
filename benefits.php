@@ -35,85 +35,62 @@ echo '
 </header>
 <table align="center">
 <tr>
-<td width="170"><img class="center" src="tenants.jpg" width="80" height="80">
+<td width="170"><a href="#" onClick="return sh(\'page1\',\'page2\');"><img class="center" src="tenants.jpg" width="80" height="80"></a>
 <div class="sub"><p>TENANT</p></div></td>
-<td width="170"><img class="center" src="landlord.jpg" width="80" height="80">
+<td width="170"><a href="#" onClick="return sh(\'page2\',\'page1\');"><img class="center" src="landlord.jpg" width="80" height="80"></a>
 <div class="sub"><p>LANDLORD</p></div></td>
 </tr>
 </table>
-<h2 class="sub1">Calculate Your Savings on our platform</h2>
-<p class="sub2">
-Paymatrix enables you to pay monthly property rent and rent advances the smarter way! As a tenant, you can now pay rent on credit, generate rent receipts and rent agreements online and avail several related services, all at a single place.
-</p>
-<p class="sub2">This means better management of cash flows and now you can postpone your rent payment for a while to spend on something even worthwhile.</p>
-<div class="calcbox">
-	<h3 class="calc">Calculate</h3>
-</div>
-<div class="calcbox">Monthly Rent Amount <input type="range" id="rangeInput" min=1000 max=100000 value=5000 class="slider" oninput="amount.value=rangeInput.value;updaterew(this.value);updateofr(this.value);updatesav(this.value);" >
-<div class="rupee"><input type="number" id="amount" min="0" max="9999999" value=5000 maxlength="7" class="tb1" oninput="rangeInput.value=amount.value;updaterew(this.value);if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);updateofr(this.value);updatesav(this.value);"></div>
-</div>
-<br/>
-<div class="calcbox">Mode of Payment 
-<label class="radio inline"> 
-      <input type="radio" name="mp" value="Credit card" checked>
-      <span> Credit Card </span> 
-   </label>
+<div id="page1">
+  <h2 class="sub1">Calculate Your Savings on our platform</h2>
+  <p class="sub2">
+  Paymatrix enables you to pay monthly property rent and rent advances the smarter way! As a tenant, you can now pay rent on credit, generate rent receipts and rent agreements online and avail several related services, all at a single place.
+  </p>
+  <p class="sub2">This means better management of cash flows and now you can postpone your rent payment for a while to spend on something even worthwhile.</p>
+  <div class="calcbox">
+  	<h3 class="calc">Calculate</h3>
+  </div>
+  <div class="calcbox">Monthly Rent Amount <input type="range" id="rangeInput" min=1000 max=100000 value=5000 class="slider" oninput="amount.value=rangeInput.value;updaterew(this.value);updateofr(this.value);updatesav(this.value);" >
+  <div class="rupee"><input type="number" id="amount" min="0" max="9999999" value=5000 maxlength="7" class="tb1" oninput="rangeInput.value=amount.value;updaterew(this.value);if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);updateofr(this.value);updatesav(this.value);"></div>
+  </div>
+  <br/>
+  <div class="calcbox">Mode of Payment 
   <label class="radio inline"> 
-      <input type="radio" name="mp" value="Debit Card">
-      <span>Debit Card </span> 
-  </label>
-  <label class="radio inline"> 
-      <input type="radio" name="mp" value="Net Banking">
-      <span>Net Banking </span> 
-  </label>
-</div>
-<div class="calcbox2"><br/><br/>
-<label class="lbl">Credit free period: </label> <label style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">45 days</label><br/><br/>
-<label class="lbl">Card Rewards: </label><label id="rew" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">50</label><br/><br/>
-<label class="lbl">Offers & Discounts: </label><label id="ofr" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">150</label><br/>
-</div><br/><br/>
+        <input type="radio" name="mp" value="Credit card" checked>
+        <span> Credit Card </span> 
+     </label>
+    <label class="radio inline"> 
+        <input type="radio" name="mp" value="Debit Card">
+        <span>Debit Card </span> 
+    </label>
+    <label class="radio inline"> 
+        <input type="radio" name="mp" value="Net Banking">
+        <span>Net Banking </span> 
+    </label>
+  </div>
+  <div class="calcbox2"><br/><br/>
+  <label class="lbl">Credit free period: </label> <label style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">45 days</label><br/><br/>
+  <label class="lbl">Card Rewards: </label><label id="rew" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">50</label><br/><br/>
+  <label class="lbl">Offers & Discounts: </label><label id="ofr" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">150</label><br/>
+  </div><br/><br/>
 
-<div class="calcbox">Referrals per month <input type="range" id="referrng" min=0 max=10 value=0 class="slider1" oninput="refer.value=referrng.value;updateref(this.value);" >
-<div class="ref"><input type="text" id="refer" value=0 class="tb1" oninput="referrng.value=refer.value;updateref(this.value);" disabled="disabled"></div>
+  <div class="calcbox">Referrals per month <input type="range" id="referrng" min=0 max=10 value=0 class="slider1" oninput="refer.value=referrng.value;updateref(this.value);" >
+  <div class="ref"><input type="text" id="refer" value=0 class="tb1" oninput="referrng.value=refer.value;updateref(this.value);" disabled="disabled"></div>
+  </div>
+  <div class="sav">
+  <label class="lbl2">SAVINGS</label>
+  <label class="saving"></label>
+  <span id="savings3" class="saving2">249</span>
+  </div>
+  <div class="anim">
+  <img class="imganim" src="https://paymatrix.in//application/static/images/offer-sticker2.png" class="animated pulse" style="width: 200px;" alt="offers">
+  </div>
 </div>
-<div class="sav">
-<label class="lbl2">SAVINGS</label>
-<label class="saving"></label>
-<span id="savings3" class="saving2">249</span>
-</div>
-<script type="text/javascript">
-var sav=document.getElementById("savings3").innerHTML;
-
-function updaterew(a)
-{
-  document.getElementById("rew").innerHTML=Math.trunc(a/100);
-}
-function updateofr(b)
-{
-  document.getElementById("ofr").innerHTML=Math.trunc((b/100)+100); 
-}
-function updatesav(c)
-{
-  ref=document.getElementById("refer").value;
-  document.getElementById("savings3").innerHTML=Math.round(((c/100)+100)+(c/100)+(parseInt(ref)*100));  
-  sav=document.getElementById("savings3").innerHTML;
-}
-function updateref(x)
-{
-    document.getElementById("savings3").innerHTML=(parseInt(sav)+(parseInt(x)*100));
-} 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-}
-</script>
-<div class="anim">
-<img class="imganim" src="https://paymatrix.in//application/static/images/offer-sticker2.png" class="animated pulse" style="width: 200px;" alt="offers">
+<div id="page2" style="display:none">
+    <h2 class="sub1">Collect your rent on-time from your tenant</h2>
+  <p class="sub2">
+  Paymatrix enables you to timely collect rent from your tenant by extending the option of paying rent on credit card. As a landlord or property manager, you can also issue rent receipts online, generate rent agreements, screen your potential tenants and manage multiple properties all at a click on your dashboard. All these mean hassle-free rent management and better service to your tenants!.
+  </p>
 </div>
 <div class="calcbox">
   <h3 class="calc">Benefits</h3>
@@ -223,6 +200,42 @@ function scrollFunction() {
 <div>
 </footer>
 <img src="end.png">
+<script type="text/javascript">
+var sav=document.getElementById("savings3").innerHTML;
+
+function updaterew(a)
+{
+  document.getElementById("rew").innerHTML=Math.trunc(a/100);
+}
+function updateofr(b)
+{
+  document.getElementById("ofr").innerHTML=Math.trunc((b/100)+100); 
+}
+function updatesav(c)
+{
+  ref=document.getElementById("refer").value;
+  document.getElementById("savings3").innerHTML=Math.round(((c/100)+100)+(c/100)+(parseInt(ref)*100));  
+  sav=document.getElementById("savings3").innerHTML;
+}
+function updateref(x)
+{
+    document.getElementById("savings3").innerHTML=(parseInt(sav)+(parseInt(x)*100));
+} 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+}
+function sh(shown, hidden) {
+  document.getElementById(shown).style.display=\'block\';
+  document.getElementById(hidden).style.display=\'none\';
+  return false;
+}
+</script>
 </body>
 </html>';
 ?>
