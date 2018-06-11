@@ -6,31 +6,29 @@ echo '
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Benefits</title>
 </head>
-
 <body>
 <div id="navbar">
-  <img src="sticky.png">
+  <img id="st" src="sticky.png">
 </div>
 <header>
    <img src="pamatlogo.jpg" width="200" style="padding-left:20px;">
    <div class="tabcontent">
       <div class="tab">
-   		<h3>Login</h3>
+      <h3>Login</h3>
    </div>
       <div class="tab">
-   		<h3>SignUp</h3>
+      <h3>SignUp</h3>
    </div>
    <div class="tab">
-   		<h3>Admin Login</h3>
+      <h3>Admin Login</h3>
    </div>
    <div class="tab">
-   		<h3>Services</h3>		
+      <h3>Services</h3>   
    </div>
    <div class="tab">
-   		<h3>Benefits</h3>
+      <h3>Benefits</h3>
    </div>
    </div>
-
    <p>Benefits</p>
 </header>
 <table align="center">
@@ -48,7 +46,7 @@ echo '
   </p>
   <p class="sub2">This means better management of cash flows and now you can postpone your rent payment for a while to spend on something even worthwhile.</p>
   <div class="calcbox">
-  	<h3 class="calc">Calculate</h3>
+    <h3 class="calc">Calculate</h3>
   </div>
   <div class="calcbox">Monthly Rent Amount <input type="range" id="rangeInput" min=1000 max=100000 value=5000 class="slider" oninput="amount.value=rangeInput.value;updaterew(this.value);updateofr(this.value);updatesav(this.value);" >
   <div class="rupee"><input type="number" id="amount" min="0" max="9999999" value=5000 maxlength="7" class="tb1" oninput="rangeInput.value=amount.value;updaterew(this.value);if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);updateofr(this.value);updatesav(this.value);"></div>
@@ -73,7 +71,6 @@ echo '
   <label class="lbl">Card Rewards: </label><label id="rew" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">50</label><br/><br/>
   <label class="lbl">Offers & Discounts: </label><label id="ofr" style="border-bottom: 1px solid #ccc;text-align: center;color:#0872b9;display:inline-block;width:300px;">150</label><br/>
   </div><br/><br/>
-
   <div class="calcbox">Referrals per month <input type="range" id="referrng" min=0 max=10 value=0 class="slider1" oninput="refer.value=referrng.value;updateref(this.value);" >
   <div class="ref"><input type="text" id="refer" value=0 class="tb1" oninput="referrng.value=refer.value;updateref(this.value);" disabled="disabled"></div>
   </div>
@@ -202,7 +199,6 @@ echo '
 <img src="end.png">
 <script type="text/javascript">
 var sav=document.getElementById("savings3").innerHTML;
-
 function updaterew(a)
 {
   document.getElementById("rew").innerHTML=Math.trunc(a/100);
@@ -222,12 +218,13 @@ function updateref(x)
     document.getElementById("savings3").innerHTML=(parseInt(sav)+(parseInt(x)*100));
 } 
 window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+     document.getElementById("st").style.display=\'block\';
     document.getElementById("navbar").style.top = "0";
   } else {
     document.getElementById("navbar").style.top = "-50px";
+    document.getElementById("st").style.display=\'none\';
   }
 }
 function sh(shown, hidden) {

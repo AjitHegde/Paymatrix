@@ -251,10 +251,10 @@ header{
 }
 .sav
 {
+   visibility: visible;
    position: absolute; 
-   visibility: visible; 
+   top:750px;
    left: 990px; 
-   top: 880px; 
    display:block;
    background-color: #82ba55;
    width:185px;
@@ -290,7 +290,7 @@ header{
     background-color:#d5dae2;
     position: absolute;
     left:990px;
-    top:980px;
+    top:850px;
     width:185px;
 }
 footer
@@ -308,7 +308,6 @@ footer
   padding-top: 30px;
 }
 .main {
-
   display: flex;
 }
 .subblk
@@ -398,9 +397,19 @@ footer
 }
 
 #navbar {
-    position: fixed; 
-    top: -50px; 
-    width: 100%; 
-    transition: top 0.3s; 
-    z-index: 1;
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  display:block;
+  transition: top 0.3s;
+  z-index: 1;
+}
+
+#navbar img {
+  float: left;
+  display: none;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
 }
